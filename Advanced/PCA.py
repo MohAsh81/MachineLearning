@@ -22,7 +22,7 @@ X_scaled = scaler.fit_transform(X)
 X_train, X_test, y_train, y_test = train_test_split(
     X_scaled, y, test_size=0.2, random_state=30)
 
-model = LogisticRegression().model.fit(X_train, y_train)
+model = LogisticRegression().fit(X_train, y_train)
 print(model.score(X_test, y_test))
 
 
@@ -33,7 +33,7 @@ X_pca = pca.fit_transform(X)
 X_train_pca, X_test_pca, y_train, y_test = train_test_split(
     X_pca, y, test_size=0.2, random_state=30)
 
-model = LogisticRegression(max_iter=1000).model.fit(X_train_pca, y_train)
+model = LogisticRegression(max_iter=1000).fit(X_train_pca, y_train)
 print(model.score(X_test_pca, y_test))
 
 pca = PCA(n_components=2)
@@ -42,5 +42,5 @@ X_pca = pca.fit_transform(X)
 X_train_pca, X_test_pca, y_train, y_test = train_test_split(
     X_pca, y, test_size=0.2, random_state=30)
 
-model = LogisticRegression(max_iter=1000).model.fit(X_train_pca, y_train)
+model = LogisticRegression(max_iter=1000).fit(X_train_pca, y_train)
 print(model.score(X_test_pca, y_test))
